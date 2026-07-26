@@ -15,7 +15,7 @@ jobs:
           DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
       - name: Compute tag
         id: tag
-        run: echo ::set-output name=TAG ::anishathalye/proof-html:${GITHUB_REF#refs/tags/v}
+        run: echo "TAG=anishathalye/proof-html:${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
       - name: Build image
         run: docker build . -t ${{ steps.tag.outputs.TAG }}
       - name: Publish image
