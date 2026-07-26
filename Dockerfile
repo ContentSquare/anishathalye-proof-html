@@ -10,7 +10,7 @@ RUN git clone -n https://github.com/validator/validator.git
 
 RUN cd validator \
     && git fetch \
-    && git checkout cf9eb402c4957d2404644951d3f46d8330d59db4
+    && git checkout fdabf092e60dfb5a3da810f3003266a19b582452
 
 RUN cd validator \
     && JAVA_HOME=/usr/lib/jvm/java-25-openjdk python checker.py dldeps
